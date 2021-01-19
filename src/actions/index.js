@@ -1,8 +1,25 @@
-const increment = function (multiBy) {
+export const addTask = function (taskName) {
     return{
-        type: 'INCREMENT',
-        data: multiBy
+        type: 'ADD_TASK',
+        data: taskName
     }
 }
 
-export default increment
+export const startTimer = function () {
+    return {
+        type: 'START_TASK'
+    }
+}
+
+export const stopTimer = function () {
+    return {
+        type: 'STOP_TASK'
+    }
+}
+
+
+export const increasesTime = function () {
+    return {
+        type: 'INCREASES_TIME'
+    }
+}

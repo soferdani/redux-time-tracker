@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 //redux
-import { Provider } from 'react-redux'
-import rootReducer from './reducers/reducer'
-import {createStore} from "redux";
+import { Provider } from 'react-redux' // default
+import {createStore} from "redux"; // default
+import rootReducer from './reducers/task' //current reducer that im workig with
 const store = createStore(
     rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
