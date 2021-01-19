@@ -1,7 +1,7 @@
 export const addTask = function (taskName) {
     return{
         type: 'ADD_TASK',
-        data: taskName
+        payload: taskName
     }
 }
 
