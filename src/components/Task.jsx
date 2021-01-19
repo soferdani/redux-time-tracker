@@ -4,7 +4,11 @@ export default function Task (props) {
 
     return (
         <div>
-            {props.taskNmae}
+            <br/>
+            <span>{props.taskNmae}   </span>
+            <span>{props.time}     </span>
+            <button>start</button>
+
         </div>
     )
 }
