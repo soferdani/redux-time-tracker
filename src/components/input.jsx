@@ -4,13 +4,11 @@ import {useState} from "react";
 
 
 
-export default function Input (props) {
+export default function Input () {
     const lastTaskId = useSelector(state => state.tasks[state.tasks.length -1].id)
     const dispatch = useDispatch();
 
-
     const [inputValue, setInputValue] = useState ('')
-
 
     const inputChange = function (event) {
         setInputValue(event.target.value)
@@ -20,8 +18,6 @@ export default function Input (props) {
         dispatch(addTask(lastTaskId ?  lastTaskId + 1 : 0  , inputValue))
         setInputValue('')
     }
-
-
 
 
     return (

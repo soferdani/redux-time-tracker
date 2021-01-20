@@ -12,12 +12,20 @@ export default function Task (props) {
         } // here i can add something if i want that something will happened if a task is running
     }
 
+    const pauseTimer = function () {
+
+    }
+
     return (
         <div>
             <br/>
             <span>{props.taskNmae}   </span>
             <span>{props.time}     </span>
-            <button onClick={startTimer}>start</button>
+
+            {!isRunning ?
+                <button onClick={startTimer}>start</button>
+                :<button onClick={pauseTimer}>pause</button>}
+
 
         </div>
     )

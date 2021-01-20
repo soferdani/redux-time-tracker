@@ -7,7 +7,7 @@ const timerAppState = {
 }
 
 
-// MUST RETURN NEW OBJECT !!!
+// MUST RETURN NEW OBJECT !!!!!!!
 export default (state = timerAppState, action) => {
     switch (action.type) {
         case 'ADD_TASK':
