@@ -4,14 +4,14 @@ const timerAppState = {
         {id: 1, taskName: 'this is the first one', time: 13},
         {id: 2, taskName: 'this is the second', time: 4},
     ],
-    taskId: null
+    isRunning: null
 }
 
 
 export default (state= timerAppState, action) => {
     switch (action.type){
         case 'ADD_TASK':
-            state.tasks.push({id: action.payload.id, taskName: action.payload.taskName, time: 0})
+            return state.tasks.push({id: action.payload.id, taskName: action.payload.taskName, time: 0})
         case 'START_TASK':
             return state;
         case 'STOP_TASK':
