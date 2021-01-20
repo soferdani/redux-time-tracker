@@ -7,7 +7,7 @@
         {id:number, name: 'task1', time: number(seconds)},  
         {id:number, name: 'task2', time: number(seconds)}
     ],
-      isRunning: id,
+      taskId: id,
    }
       
 2. Actions
