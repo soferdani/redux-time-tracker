@@ -1,5 +1,5 @@
 import {useSelector,useDispatch} from "react-redux";
-import {startTimer} from '../actions/index'
+import {startTimer,stopTimer} from '../actions/index'
 
 
 
@@ -10,11 +10,11 @@ export default function Task (props) {
     const startTimerFromTheComponent = function () {
         dispatch(startTimer(props.id))
 
-
     }
 
-    const pauseTimerFromTheComponent = function () {
 
+    const pauseTimerFromTheComponent = function () {
+        dispatch(stopTimer(props.id))
     }
 
     //to run the clock i need to use the set interval and clear interval
@@ -28,7 +28,6 @@ export default function Task (props) {
             {isRunning !== props.id ?
                 <button onClick={startTimerFromTheComponent}>start</button>
                 :<button onClick={pauseTimerFromTheComponent}>pause</button>}
-
         </div>
     )
 }

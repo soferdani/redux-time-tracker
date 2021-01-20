@@ -15,10 +15,9 @@ export const startTimer = function (id) {
     }
 }
 
-export const stopTimer = function (id) {
+export const stopTimer = function () {
     return {
-        type: 'STOP_TASK',
-        payload: id
+        type: 'STOP_TASK'
     }
 }
 

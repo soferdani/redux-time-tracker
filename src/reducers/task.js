@@ -21,7 +21,8 @@ export default (state = timerAppState, action) => {
             return {...state,
                 isRunning: action.payload};
         case 'STOP_TASK':
-            return state;
+            return {...state,
+                isRunning: null};
         case 'INCREASES_TIME':
             return state;
         default:

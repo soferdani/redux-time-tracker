@@ -1,14 +1,14 @@
 import {useSelector} from "react-redux";
 import Task from "./components/Task";
-import './App.css';
 import Input from "./components/Input";
+import './App.css';
 
 
 function App() {
     const {tasks} = useSelector(state => state) // bring the state to the component
     return (
     <div className="App">
-        <div>This is my app</div>
+        <div>This is my Time Tracker</div>
         <br/><br/>
         <Input/>
         {tasks && tasks.map((task) =>
