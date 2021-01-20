@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 import Task from "./components/Task";
 import './App.css';
-import Input from "./components/input";
+import Input from "./components/Input";
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <br/><br/>
         <Input/>
         {tasks && tasks.map((task) =>
-                <Task key={task.id} taskNmae={task.taskName} time={task.time}/>
+                <Task key={task.id} id={task.id} taskNmae={task.taskName} time={task.time}/>
         )}
 
     </div>

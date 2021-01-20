@@ -7,6 +7,7 @@ const timerAppState = {
 }
 
 
+
 // MUST RETURN NEW OBJECT !!!!!!!
 export default (state = timerAppState, action) => {
     switch (action.type) {
@@ -17,7 +18,8 @@ export default (state = timerAppState, action) => {
                     taskName: action.payload.taskName,
                     time: 0}]};
         case 'START_TASK':
-            return state;
+            return {...state,
+                isRunning: action.payload};
         case 'STOP_TASK':
             return state;
         case 'INCREASES_TIME':
@@ -25,4 +27,8 @@ export default (state = timerAppState, action) => {
         default:
             return state;
     }
+}
+
+const start = function () {
+
 }

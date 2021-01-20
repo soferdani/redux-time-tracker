@@ -1,20 +1,23 @@
-import {useSelector} from "react-redux";
+import {useSelector,useDispatch} from "react-redux";
+import {startTimer} from '../actions/index'
 
 
 
 export default function Task (props) {
-
+    const dispatch = useDispatch();
     const isRunning = useSelector(state => state.isRunning)
 
-    const startTimer = function () {
-        if (!isRunning) {
-            console.log(isRunning)
-        } // here i can add something if i want that something will happened if a task is running
-    }
+    const startTimerFromTheComponent = function () {
+        dispatch(startTimer(props.id))
 
-    const pauseTimer = function () {
 
     }
+
+    const pauseTimerFromTheComponent = function () {
+
+    }
+
+    //to run the clock i need to use the set interval and clear interval
 
     return (
         <div>
@@ -22,10 +25,9 @@ export default function Task (props) {
             <span>{props.taskNmae}   </span>
             <span>{props.time}     </span>
 
-            {!isRunning ?
-                <button onClick={startTimer}>start</button>
-                :<button onClick={pauseTimer}>pause</button>}
-
+            {isRunning !== props.id ?
+                <button onClick={startTimerFromTheComponent}>start</button>
+                :<button onClick={pauseTimerFromTheComponent}>pause</button>}
 
         </div>
     )

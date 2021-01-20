@@ -8,15 +8,17 @@ export const addTask = function (id ,taskName) {
     }
 }
 
-export const startTimer = function () {
+export const startTimer = function (id) {
     return {
-        type: 'START_TASK'
+        type: 'START_TASK',
+        payload: id
     }
 }
 
-export const stopTimer = function () {
+export const stopTimer = function (id) {
     return {
-        type: 'STOP_TASK'
+        type: 'STOP_TASK',
+        payload: id
     }
 }
 

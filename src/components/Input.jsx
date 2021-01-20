@@ -14,7 +14,6 @@ export default function Input () {
         setInputValue(event.target.value)
     }
     const handleAddNewTask = function () {
-        debugger
         dispatch(addTask(lastTaskId ?  lastTaskId + 1 : 0  , inputValue))
         setInputValue('')
     }
