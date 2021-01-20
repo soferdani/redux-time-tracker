@@ -1,43 +1,19 @@
-import {useState} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {addTask, startTimer} from './actions/index'
+import {useSelector} from "react-redux";
 import Task from "./components/Task";
 import './App.css';
-
+import Input from "./components/input";
 
 
 function App() {
-    const tasks = useSelector(state => state.tasks) // bring the state to the component
-    const lastTaskId = useSelector(state => state.tasks[state.tasks.length -1].id)
-    const dispatch = useDispatch();
-
-
-    const [inputValue, setInputValue] = useState ('')
-
-
-    const inputChange = function (event) {
-        setInputValue(event.target.value)
-    }
-    const handleAddNewTask = function () {
-        dispatch(addTask(lastTaskId ?  lastTaskId + 1 : 0  , inputValue))
-        setInputValue('')
-    }
-
-
-
-
+    const {tasks} = useSelector(state => state) // bring the state to the component
     return (
     <div className="App">
-
         <div>This is my app</div>
         <br/><br/>
-
-        <input type={'text'} placeholder={'New Task'} onChange={inputChange} value={inputValue}/>
-        <button onClick={handleAddNewTask}>Add</button>
-
-        {tasks ? tasks.map((task) =>
+        <Input/>
+        {tasks && tasks.map((task) =>
                 <Task key={task.id} taskNmae={task.taskName} time={task.time}/>
-        ): null}
+        )}
 
     </div>
   );

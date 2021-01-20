@@ -1,4 +1,3 @@
-
 const timerAppState = {
     tasks: [
         {id: 1, taskName: 'this is the first one', time: 13},
@@ -8,10 +7,15 @@ const timerAppState = {
 }
 
 
-export default (state= timerAppState, action) => {
-    switch (action.type){
+// MUST RETURN NEW OBJECT !!!
+export default (state = timerAppState, action) => {
+    switch (action.type) {
         case 'ADD_TASK':
-            return state.tasks.push({id: action.payload.id, taskName: action.payload.taskName, time: 0})
+            return {...state,
+                tasks: [...state.tasks,
+                    {id: state.tasks.length + 1,
+                    taskName: action.payload.taskName,
+                    time: 0}]};
         case 'START_TASK':
             return state;
         case 'STOP_TASK':
@@ -22,7 +26,3 @@ export default (state= timerAppState, action) => {
             return state;
     }
 }
-
-
-
-
