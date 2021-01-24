@@ -9,7 +9,6 @@ export default function Task (props) {
 
     const startTimerFromTheComponent = function () {
         dispatch(startTimer(props.id))
-
     }
 
 
@@ -22,7 +21,7 @@ export default function Task (props) {
     return (
         <div>
             <br/>
-            <span>{props.taskNmae}   </span>
+            <span>{props.taskName}   </span>
             <span>{props.time}     </span>
 
             {isRunning !== props.id ?

@@ -12,7 +12,7 @@ function App() {
         <br/><br/>
         <Input/>
         {tasks && tasks.map((task) =>
-                <Task key={task.id} id={task.id} taskNmae={task.taskName} time={task.time}/>
+                <Task key={task.id} id={task.id} taskName={task.taskName} time={task.time}/>
         )}
 
     </div>
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+

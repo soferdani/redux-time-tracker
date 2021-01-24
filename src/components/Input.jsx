@@ -13,16 +13,25 @@ export default function Input () {
     const inputChange = function (event) {
         setInputValue(event.target.value)
     }
+
+
+    
     const handleAddNewTask = function () {
-        dispatch(addTask(lastTaskId ?  lastTaskId + 1 : 0  , inputValue))
-        setInputValue('')
+            dispatch(addTask(lastTaskId ?  lastTaskId + 1 : 0  , inputValue))
+            setInputValue('')
     }
 
+    const handleAddNewTaskUseKey = function (e) {
+        if (e.key === 'Enter') {
+            dispatch(addTask(lastTaskId ?  lastTaskId + 1 : 0  , inputValue))
+            setInputValue('')
+        }
+    }
 
     return (
     <div>
         <input type={'text'} placeholder={'New Task'} onChange={inputChange} value={inputValue}/>
-        <button onClick={handleAddNewTask}>Add</button>
+        <button onKeyUp={handleAddNewTaskUseKey} onClick={handleAddNewTask}>Add</button>
     </div>
     )
 }
